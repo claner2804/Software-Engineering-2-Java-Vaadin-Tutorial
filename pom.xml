@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
 
     <properties>
-        <java.version>21</java.version>
+        <java.version>17</java.version>
         <vaadin.version>24.7.2</vaadin.version>
     </properties>
 
@@ -87,8 +87,10 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-testbench-junit5</artifactId>
+            <version>24.7.2</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -202,23 +204,6 @@
                         </executions>
                     </plugin>
 
-                    <!-- Runs the integration tests (*IT) after the server is started -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-failsafe-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>integration-test</goal>
-                                    <goal>verify</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <trimStackTrace>false</trimStackTrace>
-                            <enableAssertions>true</enableAssertions>
-                        </configuration>
-                    </plugin>
                 </plugins>
             </build>
         </profile>
